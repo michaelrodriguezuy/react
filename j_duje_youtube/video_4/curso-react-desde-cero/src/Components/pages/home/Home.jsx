@@ -23,11 +23,7 @@ useEffect(() => {
       <div>
         {
           movies.map( (movie) => {
-            return (
-              
-               <Pelicula elemento={movie} />
-
-            )
+            return <Pelicula elemento={movie} key={movie.id}/>
           })
         }
 

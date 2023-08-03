@@ -1,16 +1,32 @@
+import { Card, CardActionArea, CardMedia, CardContent, Typography } from '@mui/material'
 
-import React from 'react'
+const Pelicula = ({elemento}) => {
 
-const Pelicula = ({name,genre, create,img,isliked}) => {
+    let {name,genre, create,img,isliked} = elemento
+
     return (
-       /*  <div >
-            <h2 > {elemento.name}</h2>
-            <p>{elemento.genre} {elemento.create}</p>
-            <img src={elemento.img} alt={elemento.name} />
-            <p>{elemento.isliked}</p>
-        </div> */
-        <h2>{name}</h2>
+        <Card sx={{ width: 350 }}>
+            <CardActionArea>
+                <CardMedia
+                    component="img"
+                    height="170"
+                    image={img}
+                    alt={name}
+                />
+                <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                        {name}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                        {genre} - {create} - {isliked}
+                    </Typography>
+                </CardContent>
+            </CardActionArea>
+        </Card>        
     )
 }
 
 export default Pelicula
+
+
+

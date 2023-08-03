@@ -1,0 +1,28 @@
+{
+    "movies":[
+        {
+            "id":1,
+            "name":"En busca del destino",
+            "img":"https://i.pinimg.com/originals/b4/35/3e/b4353e455f25e684ec1c33cb4afefa74.jpg",
+            "genre":"Drama",
+            "create":"1995",     
+            "isliked": true
+        },
+        {
+            "id":2,
+            "name":"En busca de la felicidad",
+            "img":"https://www.elcaminanteysusombra.com/wp/wp-content/uploads/2015/09/felicidad.jpg",
+            "genre":"Biográfica",
+            "create":"2006",     
+            "isliked": false
+        },
+        {
+            "id":3,
+            "name":"La vida es bella",
+            "img":"https://hips.hearstapps.com/hmg-prod/images/vida-es-bella2-1535453128.jpg",
+            "genre":"Drama",
+            "create":"1997",     
+            "isliked": true
+        }
+    ]
+}

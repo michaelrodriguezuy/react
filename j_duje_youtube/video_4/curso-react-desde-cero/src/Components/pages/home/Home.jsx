@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
 import Pelicula from '../../common/pelicula/Pelicula'
-import { Typography } from '@mui/material'
+import { Button, Typography } from '@mui/material'
 
 import styles from './Home.module.css'
 import Header from '../../common/header/Header'
 
 import confetti from 'canvas-confetti';
+import CreateMovieModal from '../../common/createMovieModal/CreateMovieModal'
 
 
 const Home = () => {
@@ -17,15 +18,25 @@ const Home = () => {
 
   const [isFavoritos, setIsFavoritos] = useState(false); //este estado existe para saber si yo le di click al boton de favoritos o no, y en base a esto muestro el arreglo movies (todos) o moviesFiltro (favoritos)
 
+  //estas 3 funciones las uso para el modal
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  const [isMovieCreate, setIsMovieCreate] = useState(false);
+
+  //creo esta variable para saber si se elimino una peli, y asi volver a renderizar el componente llamando al useEffect
+  const [isMovieDelete, setIsMovieDelete] = useState(false);
+
   useEffect(() => {
 
     axios.get("http://localhost:4000/movies")
       .then(response => setMovies(response.data))
       .catch(error => console.log(error))
 
-    setIsLiked(false) //una vez renderizado el componente, isLiked vuelve a ser false
-
-  }, [isLiked]); //si el estado de isLiked cambia, se vuelve a ejecutar el useEffect
+    setIsLiked(false); //una vez renderizado el componente, isLiked vuelve a ser false
+    setIsMovieCreate(false) //una vez renderizado el componente, isMovieCreate vuelve a ser false
+    setIsMovieDelete(false) //una vez renderizado el componente, isMovieDelete vuelve a ser false
+  }, [isLiked, isMovieCreate, isMovieDelete]); //si el estado de isLiked cambia o se agrega/elimino una peli, se vuelve a ejecutar el useEffect
 
   const handleLike = (movie) => {
 
@@ -48,17 +59,28 @@ const Home = () => {
 
   const moviesFiltro = movies.filter(movie => movie.isLiked) //filtro las pelis que me gustan
 
+
+  const deleteMovieById = (id) => {
+    axios.delete(`http://localhost:4000/movies/${id}`)
+      .then(response => setIsMovieDelete(true))
+      .catch(error => console.log(error))
+  }
+
   return (
     <>
       <Header setIsFavoritos={setIsFavoritos} />
       <Typography variant='h3' color='primary' align='center'>Mis favoritas</Typography>
 
+      <Button onClick={handleOpen}>+ película</Button>
+      <CreateMovieModal open={open} handleClose={handleClose} setIsMovieCreate={setIsMovieCreate} />
+
       <div className={styles.containerCard}>
         {
           !isFavoritos ? (movies.map((movie) => {
-            return <Pelicula movie={movie} key={movie.id} handleLike={handleLike} />
+            return <Pelicula movie={movie} key={movie.id} handleLike={handleLike} deleteMovieById={deleteMovieById}/>
+
           })) : moviesFiltro.map((movie) => {
-            return <Pelicula movie={movie} key={movie.id} handleLike={handleLike} />
+            return <Pelicula movie={movie} key={movie.id} handleLike={handleLike} deleteMovieById={deleteMovieById}/>
           })
         }
 

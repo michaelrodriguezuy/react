@@ -5,6 +5,7 @@ export const players = [
         team: "Juventus",
         country: "Portugal",
         age: 35,
+        image:"https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTk2NzQ0NjUxMDk1NDE4NDk4/cristiano-ronaldo-festeja.jpg",
         position: "Delantero",
     },
     {
@@ -13,6 +14,7 @@ export const players = [
         team: "Barcelona",
         country: "Argentina",
         age: 33,
+        image:"https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTk2NzQ0NjUxMDk1NDE4NDk4/cristiano-ronaldo-festeja.jpg",
         position: "Delantero",
     },
     {
@@ -21,6 +23,7 @@ export const players = [
         team: "PSG",
         country: "Brasil",
         age: 28,
+        image:"https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTk2NzQ0NjUxMDk1NDE4NDk4/cristiano-ronaldo-festeja.jpg",
         position: "Delantero",
     },
     {
@@ -29,6 +32,7 @@ export const players = [
         team: "PSG",
         country: "Francia",
         age: 21,
+        image:"https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTk2NzQ0NjUxMDk1NDE4NDk4/cristiano-ronaldo-festeja.jpg",
         position: "Delantero",
     },
     {
@@ -37,6 +41,7 @@ export const players = [
         team: "Real Madrid",
         country: "España",
         age: 34,
+        image:"https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTk2NzQ0NjUxMDk1NDE4NDk4/cristiano-ronaldo-festeja.jpg",
         position: "Defensa",
     },
     {
@@ -45,6 +50,7 @@ export const players = [
         team: "Bayern Munich",
         country: "Polonia",
         age: 32,
+        image:"https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTk2NzQ0NjUxMDk1NDE4NDk4/cristiano-ronaldo-festeja.jpg",
         position: "Delantero",
     },
     {
@@ -53,6 +59,7 @@ export const players = [
         team: "Manchester City",
         country: "Belgica",
         age: 29,
+        image:"https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTk2NzQ0NjUxMDk1NDE4NDk4/cristiano-ronaldo-festeja.jpg",
         position: "Mediocampista",
     }
 ]
